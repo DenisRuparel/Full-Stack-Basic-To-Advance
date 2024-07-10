@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="callMe(display1, display2)">Click Me!</button>
+
+    <script>
+
+        // Passing Function As an Argument On Button Click
+
+        // function
+        function display1(name){
+            alert("Hello " + name);
+        }
+        // function call
+        function display2(name){
+            alert("Welcome to Denis.com " + name);
+        }
+
+        // callback function
+        function callMe(callback1, callback2){
+            var name = prompt('Please Enter Your Name: ')
+            callback1(name);
+            callback2(name);
+        }
+
+    </script>
+
+</body>
+</html>
