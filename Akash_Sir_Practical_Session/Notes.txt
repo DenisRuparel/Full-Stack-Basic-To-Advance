@@ -1,0 +1,23 @@
+Params
+	passing data on different URL
+	Example:	Edit/1
+			Product/1
+QueryString
+	Example:	searching
+			?search=iPhone
+
+Http Methods: Get & Post
+
+Get: Default Method
+-> Data Will be visible on URL
+-> Not Secure Method to Pass Sensitive Data like username And Password.
+-> used for sorting, searching and pagination
+-> Limit: 256 Characters
+-> use: req.query in node js
+
+Post:
+-> post is secure method to pass data
+-> always use post to pass sensitive data
+-> Data will be hidden on URL
+-> File Upload: post
+-> use: req.body in node js
