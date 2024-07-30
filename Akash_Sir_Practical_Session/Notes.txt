@@ -21,3 +21,23 @@ Post:
 -> Data will be hidden on URL
 -> File Upload: post
 -> use: req.body in node js
+
+
+
+
+-> Express Advance
+
+Express Genrator
+	Download Globally
+	> npm i express-generator -g (one time)
+	
+	New Project 
+	> express --view=ejs myexpapp
+		view template engines
+		ejs, jade, pug, twig, handlebars
+	
+	Change Directory
+	> cd myexpapp
+	> npm i
+	> code .
+	> npm start or nodemon
