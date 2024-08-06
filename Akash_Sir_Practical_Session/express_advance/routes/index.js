@@ -50,4 +50,16 @@ router.post('/contactprocess', function (req, res, next) {
   res.render('ans', { mya: a, myb: b, myc: c });
 });
 
+router.get('/fileupload', function (req, res, next) {
+  res.render('fileupload')
+});
+
+router.post('/fileupload', function (req, res, next) {
+  var myFile = req.files.file1
+  var fileName = req.files.file1.name
+  myFile.mv("public/" + fileName, function (err) {
+    res.send('file uploaded')
+  })
+});
+
 module.exports = router;
