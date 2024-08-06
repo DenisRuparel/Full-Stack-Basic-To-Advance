@@ -41,3 +41,21 @@ Express Genrator
 	> npm i
 	> code .
 	> npm start or nodemon
+
+
+-> File Upload
+Use:
+Image upload
+Document
+Attachment
+
+LocalPC -> Server
+
+Download Package:
+	> npm i express-fileupload
+	import package in app.js
+	var fileupload = require('express-fileupload');
+	>Middleware Register
+
+Design
+Form Method POST Enctype='multipart/form-data'

@@ -57,9 +57,30 @@ router.get('/fileupload', function (req, res, next) {
 router.post('/fileupload', function (req, res, next) {
   var myFile = req.files.file1
   var fileName = req.files.file1.name
+  var fileMimeType = req.files.file1.mimetype
+
+  console.log(fileMimeType)
   myFile.mv("public/" + fileName, function (err) {
     res.send('file uploaded')
   })
+
+  // const myFile = req.files.file1;
+
+  // const allowedTypes = ['image/png', 'image/jpeg'];
+  // if (!allowedTypes.includes(myFile.mimetype))
+  //   return res.status(400).send('Only .png and .jpg files are allowed!');
+
+  // const maxSize = 2 * 1024 * 1024; 
+  // if (myFile.size > maxSize)
+  //   return res.status(400).send('File size should be less than 2 MB!');
+
+  // const fileName = myFile.name;
+  // myFile.mv("public/" + fileName, function (err) {
+  //   if (err)
+  //     return res.status(500).send('Error while uploading the file.');
+  //   res.send('File uploaded successfully.');
+  // });
+
 });
 
 module.exports = router;
