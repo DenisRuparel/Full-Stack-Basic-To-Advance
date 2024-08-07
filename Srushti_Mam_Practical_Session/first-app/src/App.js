@@ -3,6 +3,9 @@ import './App.css';
 // import Greet from './components/Greet';
 // import Welcome from './components/Welcome';
 import Counter from './components/Counter';
+import FunctionClick from './components/FunctionClick';
+import FunctionClickClass from './components/FunctionClickClass';
+import Lifecycle from './components/Lifecycle';
 function App() {
   return (
     <div className="App">
@@ -14,6 +17,9 @@ function App() {
       <Welcome deptName="DEPSTAR"/>
 
       <Message/> */}
+      <Lifecycle/>
+      <FunctionClick/>
+      <FunctionClickClass/>
       <Counter/>
     </div>
   );
