@@ -1,6 +1,8 @@
 import './App.css';
-import Demo from './components/Demo';
-import ErrorBoundary from './components/ErrorBoundary';
+import HookCounter3 from './components/HookCounter3';
+import HookCounter4 from './components/HookCounter4';
+// import Demo from './components/Demo';
+// import ErrorBoundary from './components/ErrorBoundary';
 // import HookCounter from './components/HookCounter';
 // import Message from './components/Message';
 // import Greet from './components/Greet';
@@ -26,11 +28,13 @@ function App() {
       <Counter/> */}
 
       {/* <HookCounter/> */}
-      <ErrorBoundary>
+      {/* <ErrorBoundary>
         <Demo deptname="CE"/>
         <Demo deptname="IT"/>
         <Demo deptname="CSE"/>
-      </ErrorBoundary>
+      </ErrorBoundary> */}
+      <HookCounter3/>
+      <HookCounter4/>
     </div>
   );
 }
