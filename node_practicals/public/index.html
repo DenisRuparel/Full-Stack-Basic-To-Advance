@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+</head>
+<body>
+  <h1>Counter: <span id="counter">0</span></h1>
+  <button onclick="incrementCounter()">Increment</button>
+  <button onclick="decrementCounter()">Decrement</button>
+
+  <script>
+    async function fetchCounter() {
+      const response = await fetch('/counter');
+      const data = await response.json();
+      document.getElementById('counter').innerText = data.counter;
+    }
+
+    async function incrementCounter() {
+      const response = await fetch('/counter/increment', { method: 'POST' });
+      const data = await response.json();
+      document.getElementById('counter').innerText = data.counter;
+    }
+
+    async function decrementCounter() {
+      const response = await fetch('/counter/decrement', { method: 'POST' });
+      const data = await response.json();
+      document.getElementById('counter').innerText = data.counter;
+    }
+    fetchCounter();
+  </script>
+</body>
+</html>
