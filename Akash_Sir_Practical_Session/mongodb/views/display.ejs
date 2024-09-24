@@ -1,0 +1,15 @@
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Mobile</th>
+    </tr>
+    <% for(var i = 0; i<data.length; i++){ %>
+        <tr>
+            <td><%= i + 1 %></td>
+            <td><%= data[i].name %></td>
+            <td><%= data[i].mobile %></td>
+            <td><a href="/delete/<%= data[i]._id %>">Delete</a></td>
+        </tr>
+    <% } %>
+</table>
