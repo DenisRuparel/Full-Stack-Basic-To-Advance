@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicals</title>
+</head>
+<!-- <body>
+    <h1>Upload a File</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Choose file:</label>
+        <input type="file" id="file" name="file"><br><br>
+        <button type="submit">Upload</button>
+    </form>
+</body> -->
+<body>
+    <h1>CRUD Application</h1>
+    <form id="itemForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required><br><br>
+        <button type="submit">Create Item</button>
+    </form>
+    <h2>Items</h2>
+    <ul id="itemsList"></ul>
+
+    <script>
+        document.getElementById('itemForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const description = document.getElementById('description').value;
+            try {
+                const response = await fetch('/items', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, description })
+                });
+                const newItem = await response.json();
+                displayItem(newItem);
+            } catch (error) {
+                console.error('Error creating item:', error);
+            }
+        });
+
+        async function fetchItems() {
+            try {
+                const response = await fetch('/items');
+                const items = await response.json();
+                items.forEach(displayItem);
+            } catch (error) {
+                console.error('Error fetching items:', error);
+            }
+        }
+
+        function displayItem(item) {
+            const itemsList = document.getElementById('itemsList');
+            const itemElement = document.createElement('li');
+            itemElement.textContent = `${item.name}: ${item.description}`;
+            itemsList.appendChild(itemElement);
+        }
+
+        fetchItems();
+    </script>
+</body>
+</html>
